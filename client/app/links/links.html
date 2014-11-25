@@ -1,0 +1,9 @@
+<div id='container'>
+  <div ng-if="link.shortenedLinks.length">
+    <ul ng-repeat="url in link.shortenedLinks">
+      <li><a href="{{ url.base_url + '/api/links/' + url.code }}">{{ url.base_url + '/' + url.code }}</a></li>
+    </ul>
+  </div>
+</div>
+
+<a href="#/shorten">Shorten</a>
