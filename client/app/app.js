@@ -17,10 +17,12 @@ angular.module('shortly', [
     })
     .when('/links', {
       templateUrl: "app/links/links.html",
+      authenticate: true,
       controller: "LinksController"
     })
     .when('/shorten', {
       templateUrl: "app/shorten/shorten.html",
+      authenticate: true,
       controller: "ShortenController"
     })
     .otherwise({

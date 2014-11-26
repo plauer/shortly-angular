@@ -3,6 +3,23 @@
   <form name="signinForm" ng-submit='signin()'>
     <input type='text'ng-model='user.username'>
     <input type="password" ng-model='user.password'>
+
+    <div class = "row">
+      <p ng-show="signupForm.username.$error.required && signupForm.username.$dirty" class="help-block">Username required.</p>
+      <p ng-show="signupForm.username.$error.minlength && signupForm.username.$dirty" class="help-block">Username minimum of 3 characters.</p>
+      <p ng-show="signupForm.username.$error.maxlength && signupForm.username.$dirty" class="help-block">Username maximum of 12 characters.</p>
+    </div>
+
+    <div class = "row">
+      <p ng-show="signupForm.password.$error.minlength && signupForm.password.$dirty" class="help-block">Password must be at least 5 characters long.</p>
+      <p ng-show="signupForm.password.$error.maxlength && signupForm.password.$dirty" class="help-block">Maximum password length is 12 characters long.</p>
+      <p ng-show="signupForm.password.$error.required && signupForm.password.$dirty" class="help-block">A password is required.</p>
+    </div>
+
+
+
+
+
     <button>signin</button>
   </form>
   <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
