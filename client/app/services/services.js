@@ -9,13 +9,19 @@ angular.module('shortly.services', [])
     });
   };
 
-  var getLinks = function() {
-
+  var getAllLinks = function() {
+    return $http({
+      method: 'GET',
+      url: '/api/links'
+    })
+    .then(function(resp) {
+      return resp.data
+    });
   };
 
   return {
     addLink: addLink,
-    getLinks: getLinks
+    getAllLinks: getAllLinks
   };
 })
 .factory('Auth', function ($http, $location, $window) {

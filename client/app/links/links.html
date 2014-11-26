@@ -1,9 +1,13 @@
 <div id='container'>
-  <div ng-if="link.shortenedLinks.length">
-    <ul ng-repeat="url in link.shortenedLinks">
+  <div ng-if="data.links">
+    <ul ng-repeat="url in data.links">
+      <img src="assets/redirect_icon.png" alt="redirect icon" />
+      <li><h3>{{ url.title }}</h3></li>
+      <li><p>{{ url.url }}</p></li>
       <li><a href="{{ url.base_url + '/api/links/' + url.code }}">{{ url.base_url + '/' + url.code }}</a></li>
+      <div class="visited">Views: {{ url.visits }}</div>
+      <br><br>
     </ul>
   </div>
 </div>
-
 <a href="#/shorten">Shorten</a>
