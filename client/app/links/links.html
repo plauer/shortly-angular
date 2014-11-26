@@ -1,6 +1,7 @@
 <div id='container'>
   <div ng-if="data.links">
-    <ul ng-repeat="url in data.links">
+  <input type = "text" ng-model = "search" placeholder = "Search for links ...">
+    <ul ng-repeat="url in data.links | filter:search">
       <img src="assets/redirect_icon.png" alt="redirect icon" />
       <li><h3>{{ url.title }}</h3></li>
       <li><p>{{ url.url }}</p></li>

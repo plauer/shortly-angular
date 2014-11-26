@@ -13,14 +13,5 @@ angular.module('shortly.links', [])
       });
   };
 
-  // $scope.getLinks = function() {
-  //   $http({
-  //     method: "GET",
-  //     url: "/api/links"
-  //   }).then(function(resp) {
-  //     $scope.data.links = resp.data;
-  //   });
-  // };
-
   $scope.getLinks();
 });
